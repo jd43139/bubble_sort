@@ -1,18 +1,17 @@
 def bubble_sort(array)
-  not_sorted = true
-  unsorted_items = array.length-1
-  while not_sorted
+  sorted = false
+  while !sorted
     swaps = 0
-    for i in 0...unsorted_items
+    for i in 0...array.length-1
       if array[i] > array[i+1]
         swaps+=1
         array[i],array[i+1] = array[i+1], array[i]
       end
     end
-    unsorted_items-=1
     if swaps == 0
-      not_sorted = false
+      sorted = true
     end
+    
   end
   array
 end
